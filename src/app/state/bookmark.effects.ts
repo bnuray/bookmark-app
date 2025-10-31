@@ -14,7 +14,7 @@ export class BookmarkEffects {
     this.actions$.pipe(
       ofType(BookmarkActions.loadBookmarks),
       mergeMap(() =>
-        this.http.get<any[]>('http://localhost:3000/bookmarks').pipe(
+        this.http.get<Bookmark[]>('http://localhost:3000/bookmarks').pipe(
           map(bookmarks => BookmarkActions.loadBookmarksSuccess({ bookmarks })),
           catchError(error => of(BookmarkActions.loadBookmarksFailure({ error })))
         )
