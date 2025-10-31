@@ -44,12 +44,12 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
-## Running end-to-end tests
+## Running Json server
 
-For end-to-end (e2e) testing, run:
+For runnng Json server go to bookmark-app/src/app and run the following command:
 
 ```bash
-ng e2e
+json-server --watch db.json --port 3000
 ```
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
