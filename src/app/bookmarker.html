@@ -1,0 +1,44 @@
+<header class="header">
+  <div class="left">
+    <div class="title">Bookmarker</div>
+  </div>
+
+  <div class="filter-container">
+    <input [(ngModel)]="filterText" (ngModelChange)="onFilterTextChange()" type="text"
+      placeholder="Filter bookmarks..." />
+  </div>
+
+  <button (click)="goToAddBookmark()" class="action-btn">＋</button>
+</header>
+
+<div class="bookmarks-container">
+  <section *ngFor="let section of sections" class="bookmarks-list">
+    <h2 class="section-header">{{ section.title }}</h2>
+
+    <div *ngIf="loading$ | async" class="loading">Loading bookmarks...</div>
+
+    <ul *ngIf="(section.bookmarks$ | async) as bookmarks">
+      <li *ngFor="let bookmark of bookmarks" class="bookmark-item">
+        <div class="bookmark-content">
+          <div class="bookmark-icon">
+            <span class="material-icons">bookmark</span>
+          </div>
+          <div class="bookmark-details">
+            <h3 class="bookmark-title">{{ bookmark.title }}</h3>
+            <div class="bookmark-url">{{ bookmark.url }}</div>
+          </div>
+        </div>
+
+        <button (click)="goToEditBookmark(bookmark.id)" class="action-btn">
+          <div class="edit-icon">
+            <span class="material-icons">edit</span>
+          </div>
+        </button>
+      </li>
+    </ul>
+
+    <div *ngIf="!(loading$ | async) && !(section.bookmarks$ | async)?.length">
+      {{ section.empty }}
+    </div>
+  </section>
+</div>

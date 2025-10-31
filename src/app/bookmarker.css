@@ -1,0 +1,122 @@
+.title {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: steelblue;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.bookmarks-container {
+  margin-top: 60px;
+  padding: 0 200px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.bookmarks-list {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.section-header {
+  color: #808080;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.bookmark-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.bookmark-content {
+  display: flex;
+  align-items: center;
+  width: 85%;
+}
+
+.bookmark-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  color:dimgrey;
+}
+
+.bookmark-details {
+  max-width: calc(100% - 50px);
+}
+
+.bookmark-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.bookmark-url {
+  font-size: 16px;
+  color: #0066cc;
+  word-wrap: break-word;
+}
+
+.edit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 15%;
+  color:dimgrey;
+}
+
+.loading {
+  font-size: 16px;
+  color:dimgrey;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.filter-container input {
+  width: 300px;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  background-color: transparent;
+  font-size: 16px;
+  outline: none;            
+  transition: border-color 0.3s;
+  color: #fff;
+}
+
+.filter-container input::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 24px;    
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}

@@ -1,0 +1,30 @@
+<button class="page-close-btn" (click)="goBackToList()">×</button>
+
+<div class="page-container">
+  <div class="bookmark-card">
+    <div class="header">
+      <div class="cell left">
+        <div class="left">{{ isEdit ? 'Edit Existing Bookmark' : 'Create New Bookmark' }}</div>
+      </div>
+      <div class="cell center">
+        <div class="center-elem">Type bookmark name and url</div>
+      </div>
+      <div class="cell right">
+        <div class="bookmark-icon">
+          <span class="material-icons">bookmark</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="inputs">
+      <input [(ngModel)]="newBookmark.title" placeholder="Name" />
+      <input [(ngModel)]="newBookmark.url" placeholder="URL" />
+    </div>
+
+    <div class="create-bookmark-section">
+      <button [disabled]="!newBookmark.title || !newBookmark.url" (click)="saveBookmark()">
+        {{ isEdit ? 'Update Bookmark' : 'Create Bookmark' }}
+      </button>
+    </div>
+  </div>
+</div>
